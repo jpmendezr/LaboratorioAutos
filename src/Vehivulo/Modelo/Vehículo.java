@@ -16,8 +16,8 @@ public class Vehículo {
 
     public Vehículo(int id, String placa, String descripcion) {
         this.id=0;
-        this.placa=" ";
-        this.descripcion=" ";
+        this.placa=" ABCD ";
+        this.descripcion="CARRO AZUL ";
     }
 
     public Vehículo(int id, String descripcion) {

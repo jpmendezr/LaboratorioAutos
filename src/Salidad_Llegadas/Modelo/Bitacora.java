@@ -19,6 +19,16 @@ public class Bitacora {
     private int HoraLlegada;
     private int Kfinal;
     private int Kinicial;
+    private String Provincia;
+
+    public String getProvincia() {
+        return Provincia;
+    }
+
+    public void setProvincia(String Provincia) {
+        this.Provincia = Provincia;
+    }
+    
 
     public void setKinicial(int Kinicial) {
         this.Kinicial = Kinicial;
@@ -112,7 +122,7 @@ public class Bitacora {
 
     public Bitacora() {
         this.ID = 0;
-        this.Placa = " ";
+        this.Placa = "";
         this.Destino = " ";
         this.FechaSalida = 0;
         this.FechaLlegada = 0;
@@ -120,9 +130,10 @@ public class Bitacora {
         this.HoraLlegada = 0;
         this.Kfinal = 0;
         this.Kinicial = 0;
+        this.Provincia=" ";
     }
 
-    public Bitacora(int ID, String Placa, String Destino, int FechaSalida, int FechaLlegada, int HoraSalida, int HoraLlegada, int Kfinal, int Kinicial) {
+    public Bitacora(int ID,String Placa, String Destino, int FechaSalida, int FechaLlegada, int HoraSalida, int HoraLlegada, int Kfinal, int Kinicial, String Provincia) {
         this.ID = ID;
         this.Placa = Placa;
         this.Destino = Destino;
@@ -132,6 +143,8 @@ public class Bitacora {
         this.HoraLlegada = HoraLlegada;
         this.Kfinal = Kfinal;
         this.Kinicial = Kinicial;
+        this.Provincia= Provincia;
+        
     }
 
     public Bitacora(String Placa) {
@@ -141,8 +154,7 @@ public class Bitacora {
     
     public boolean Comprobar(){
         if ( ! this.Destino.equals(" ")&& this.Placa.equals(" ") && this.FechaSalida==0 && this.HoraSalida==0 && this.Kinicial==0){
-            return true;
-            
+            return true;    
         }
         return false;
         

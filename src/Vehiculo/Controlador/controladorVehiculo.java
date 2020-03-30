@@ -19,17 +19,17 @@ import javax.swing.JOptionPane;
  * @author juan1
  */
 public class controladorVehiculo {
-  
+
     private Connection conexion;
-    
+
     private Statement sentencias;
     private ResultSet datos;
-    
-     public void conectar() {
+
+    public void conectar() {
         try {
             this.conexion = DriverManager.getConnection("jdbc:mysql://localhost/vehiculos?useServerPrepStmts=true", "root", "");
             this.sentencias = this.conexion.createStatement();
-            
+
 //            FrameConfi confi = new FrameConfi();
 //            confi.setVisible(true);
         } catch (SQLException ex) {
@@ -37,23 +37,22 @@ public class controladorVehiculo {
             //System.out.println(" Error al conectar");
         }
     }
-    
-    public void Agregar (Vehículo carro){
+
+    public void Agregar(Vehículo carro) {
         try {
-            
-            this.sentencias.executeUpdate("insert into vehiculos values(null,'"+carro.getId()+","+carro.getPlaca()+"','"+carro.getDescripcion()+"')",Statement.RETURN_GENERATED_KEYS);
+
+            this.sentencias.executeUpdate("insert into vehiculos values(null,'" + carro.getPlaca() + "','" + carro.getDescripcion() + "')", Statement.RETURN_GENERATED_KEYS);
             this.datos = this.sentencias.getGeneratedKeys();
             if (datos.next()) {
-                
+
                 System.out.println(datos.getInt(1));
                 System.out.println(" se agrego de manera exitosa");
-                
+
             }
         } catch (SQLException ex) {
             System.out.println("Error al agregar");
         }
-        
-        
+
     }
-    
+
 }
