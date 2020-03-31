@@ -14,20 +14,18 @@ public class Vehículo {
     private String placa;
     private String descripcion;
 
-    public Vehículo(int id, String placa, String descripcion) {
-        this.id=0;
-        this.placa=" ABCD ";
-        this.descripcion="CARRO AZUL ";
+    public Vehículo(String placa) {
+        this.id = 0;
+        this.placa = placa;
+        this.descripcion = null;
     }
 
-    public Vehículo(int id, String descripcion) {
+    public Vehículo(int id,String placa,String descripcion) {
         this.id = id;
+        this.placa = placa;
         this.descripcion = descripcion;
     }
 
-    public Vehículo(String placa) {
-        this.placa = placa;
-    }
     
     public int getId() {
         return id;
